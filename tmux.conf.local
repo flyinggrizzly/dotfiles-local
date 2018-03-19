@@ -1,3 +1,6 @@
+# shell
+set-option -g default-shell $(which zsh)
+
 # Split commands
 bind \ split-window -h
 bind - split-window -v

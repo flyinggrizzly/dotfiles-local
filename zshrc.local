@@ -1,5 +1,7 @@
 plugins=(git colored-man ruby rails bundler docker gem git-extras tig colorize github vagrant brew zsh-syntax-highlighting history-substring-search)
 
+export EDITOR="$(which vim)"
+
 # Enable rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
