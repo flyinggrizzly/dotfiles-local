@@ -1,0 +1,16 @@
+[user]
+  name = Sean DMR
+  email = sean@flyinggrizzly.io
+
+[core]
+  editor = /usr/bin/vim
+
+[alias]
+  l = log --pretty=colored
+  st   = status
+  d    = diff
+  hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[pretty]
+  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+

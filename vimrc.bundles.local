@@ -1,0 +1,15 @@
+" Plugins
+
+" Airline statusbar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Files and git
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Indent guides
+Plug 'nathanaelkane/vim-indent-guides'
+
+" Async syntax checking with ALE
+Plug 'w0rp/ale'
