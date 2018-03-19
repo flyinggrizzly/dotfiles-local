@@ -1,0 +1,13 @@
+# Gems to be installed by default with rbenv
+# Required rbenv/rbenv-default-gems
+
+# Tools
+tmuxinator
+httparty
+
+# Ruby/Rails development
+rubocop
+rails ~>5.0
+
+# Party
+uss-enterprise
