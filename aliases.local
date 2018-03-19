@@ -2,6 +2,13 @@ alias ls='ls -ltr'
 
 alias flushdns="sudo discoveryutil udnsflushcaches"
 
+# Apt aliases
+alias sapt="sudo apt"
+alias apts="apt search"
+alias aup="sudo apt update"
+alias aug="sudo apt upgrade"
+alias auglist="sudo apt list --upgradeable"
+
 # Git
 
 # http://codeinthehole.com/writing/tips-for-using-a-git-pre-commit-hook/
