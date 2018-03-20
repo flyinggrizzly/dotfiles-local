@@ -1,12 +1,79 @@
 " Plugins
 
-" Airline statusbar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " Files and git
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Indent guides
 Plug 'nathanaelkane/vim-indent-guides'
+
+" Following taken from styrmis/dotfiles {
+
+Plug 'jgdavey/tslime.vim'
+Plug 'janko-m/vim-test'
+
+" Common UNIX commands, like :Mkdir
+Plug 'tpope/vim-eunuch'
+
+" Git Undo
+Plug 'sjl/gundo.vim'
+
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-haml'
+
+Plug 'mattn/emmet-vim'
+
+Plug 'tpope/vim-dispatch'
+
+Plug 'ecomba/vim-ruby-refactoring'
+
+Plug 'jiangmiao/auto-pairs' " Auto-complete closing brackets
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'blindFS/vim-taskwarrior'
+Plug 'tbabej/taskwiki'
+
+Plug 'junegunn/vim-easy-align'
+
+" To get the 'yo' alias, which enables paste mode for one insert only
+Plug 'tpope/vim-unimpaired'
+
+Plug 'styrmis/molokai'
+
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
+
+Plug 'scrooloose/nerdcommenter'
+Plug 'ervandew/supertab'
+Plug 'easymotion/vim-easymotion'
+Plug 'bronson/vim-trailing-whitespace'
+
+Plug 'haya14busa/incsearch.vim'
+Plug 'vim-scripts/greplace.vim'
+
+Plug 'machakann/vim-highlightedyank'
+
+Plug 'mileszs/ack.vim'
+
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+Plug 'elixir-lang/vim-elixir'
+
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+
+" Vim text objects for Ruby blocks
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
+Plug 'wikitopian/hardmode'
+
+Plug 't9md/vim-ruby-xmpfilter'
+
+" } end pull from styrmis/dotfiles
