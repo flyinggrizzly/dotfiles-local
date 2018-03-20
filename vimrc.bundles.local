@@ -1,6 +1,6 @@
 " Plugins
 
-" Files and git
+" File navigation and git
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -22,6 +22,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-haml'
+Plug 'rust-lang/rust.vim'
 
 Plug 'mattn/emmet-vim'
 
