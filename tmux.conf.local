@@ -1,5 +1,5 @@
-# shell
-set-option -g default-shell /usr/bin/zsh
+# Set shell
+set-option -g default-shell $ZSH
 
 # Split commands
 bind \ split-window -h
