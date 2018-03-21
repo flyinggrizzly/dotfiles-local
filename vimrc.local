@@ -39,18 +39,6 @@ catch
 endtry
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Theme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'cobalt2'
-
-let g:airline_extensions = ['branch', 'tabline']
-
-" Set this. Airline will handle the rest.
-let g:airline#extensions#ale#enabled = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerdtree config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -88,18 +76,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=56
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ruby linting and syntax
+" => Language specifics
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Use Rubocop
-let g:ale_linters = {
-\   'ruby': ['rubocop'],
-\ }
-
-" Enable completion
-let g:ale_completion_enabled = 1
-
-highlight ALEWarning ctermbg=88
 
 autocmd FileType ruby map <silent> <leader>s :TestNearest<CR>
 autocmd FileType ruby map <silent> <leader>t :TestFile<CR
