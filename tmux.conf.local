@@ -1,5 +1,5 @@
 # Set shell
-set-option -g default-shell $ZSH
+if-shell "uname grep -q Darwin" "set-option -g default-shell /usr/local/bin/zsh"
 
 # Split commands
 bind \ split-window -h

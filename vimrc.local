@@ -26,7 +26,7 @@ set lazyredraw
 set autoread
 
 " Prevent auto line breaking
-set textwidth=0 wrapmargin=0
+set wrap textwidth=0 wrapmargin=0 formatoptions-=tc showbreak=...
 
 " Highlight column 120
 highlight ColorColumn ctermbg=235 guibg=#2c2d27

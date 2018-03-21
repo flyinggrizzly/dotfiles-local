@@ -1,7 +1,5 @@
 " Plugins
 
-UnPlug 'ale' " Remove ale to improve performance
-
 " File navigation and git
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
