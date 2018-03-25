@@ -35,7 +35,6 @@ Plug 'jiangmiao/auto-pairs' " Auto-complete closing brackets
 Plug 'airblade/vim-gitgutter'
 
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-Plug 'blindFS/vim-taskwarrior'
 Plug 'tbabej/taskwiki'
 
 Plug 'junegunn/vim-easy-align'
