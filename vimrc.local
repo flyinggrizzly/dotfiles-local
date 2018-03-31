@@ -74,6 +74,20 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=17
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=56
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Linting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use Rubocop
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\ }
+
+" Enable completion
+let g:ale_completion_enabled = 1
+
+highlight ALEWarning ctermbg=88
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Language specifics
