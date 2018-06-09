@@ -10,8 +10,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Indent guides
 Plug 'nathanaelkane/vim-indent-guides'
 
-" Following taken from styrmis/dotfiles {
+" File formatting
+Plug 'davidoc/taskpaper.vim'
+Plug 'junegunn/vim-easy-align'
 
+" Following taken from styrmis/dotfiles {
 Plug 'jgdavey/tslime.vim'
 Plug 'janko-m/vim-test'
 
