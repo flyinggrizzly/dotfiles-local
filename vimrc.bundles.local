@@ -1,5 +1,8 @@
 " Plugins
 
+Plug 'davidoc/taskpaper.vim'
+Plug 'gabrielelana/vim-markdown'
+
 " File navigation and git
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
