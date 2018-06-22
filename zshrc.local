@@ -14,3 +14,9 @@ source ~/.zsh/etc/tmuxinator.zsh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## Mystery Applicant specific config
+# non-standard MySQL binary from Homebrew
+# export PATH="/usr/local/opt/mysql@5.5/bin:$PATH"
+# ImageMagick 6 path
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"

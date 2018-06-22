@@ -25,8 +25,12 @@ set lazyredraw
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Prevent auto line breaking
-set wrap textwidth=0 wrapmargin=0 formatoptions-=tc showbreak=...
+" Prevent auto line breaking, see http://vim.wikia.com/wiki/VimTip989
+:set wrap
+:set linebreak
+:set nolist  " list disables linebreak
+:set textwidth=0
+:set wrapmargin=0
 
 " Highlight column 120
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
