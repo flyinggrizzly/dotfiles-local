@@ -37,7 +37,7 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="120,120"
 
 try
-  colorscheme elflord
+  colorscheme molokai
   highlight LineNr ctermfg=grey
 catch
 endtry

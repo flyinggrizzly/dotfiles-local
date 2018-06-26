@@ -46,6 +46,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-unimpaired'
 
 Plug 'styrmis/molokai'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
