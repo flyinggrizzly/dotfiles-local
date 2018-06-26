@@ -33,10 +33,14 @@ set autoread
 :set wrapmargin=0
 
 " Highlight column 120
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="120,120"
 
+" Appearance
+set encoding=UTF-8
+set guifont=Monoid_Nerd_Font_Mono:h11
 try
+  let g:molokai_original=0
+  let g:rehash256 = 1
   colorscheme molokai
   highlight LineNr ctermfg=grey
 catch
@@ -90,7 +94,7 @@ let g:ale_linters = {
 " Enable completion
 let g:ale_completion_enabled = 1
 
-highlight ALEWarning ctermbg=88
+"highlight ALEWarning ctermbg=88
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -46,7 +46,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-unimpaired'
 
 Plug 'styrmis/molokai'
-Plug 'ryanoasis/vim-devicons'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
@@ -77,3 +76,6 @@ Plug 'wikitopian/hardmode'
 Plug 't9md/vim-ruby-xmpfilter'
 
 " } end pull from styrmis/dotfiles
+
+" Load Devicons last for reasons
+Plug 'ryanoasis/vim-devicons'
