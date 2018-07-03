@@ -79,7 +79,3 @@ Plug 'wikitopian/hardmode'
 Plug 't9md/vim-ruby-xmpfilter'
 
 " } end pull from styrmis/dotfiles
-
-" Vim Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
