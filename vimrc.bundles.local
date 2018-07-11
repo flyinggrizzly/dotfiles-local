@@ -78,4 +78,4 @@ Plug 'wikitopian/hardmode'
 
 Plug 't9md/vim-ruby-xmpfilter'
 
-" } end pull from styrmis/dotfiles
+Plug 'craigemery/vim-autotags'
