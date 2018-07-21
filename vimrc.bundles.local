@@ -29,6 +29,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-haml'
 Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 
 Plug 'mattn/emmet-vim'
 
