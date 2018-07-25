@@ -1,3 +1,6 @@
+# Reduce timeout for escape key to avoid delays in vim
+set -g escape-time 10
+
 # Set shell
 if-shell "uname grep | -q Darwin" "set-option -g default-shell /usr/local/bin/zsh"
 if-shell "uname grep | -q Linux" "set-option -g default-shell /usr/bin/zsh"
