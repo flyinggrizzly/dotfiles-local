@@ -99,6 +99,9 @@ let g:ale_linters = {
 " => Language specifics
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Ruby indentation style
+let ruby_indent_block_style = 'do'
+
 autocmd FileType ruby map <silent> <leader>s :TestNearest<CR>
 autocmd FileType ruby map <silent> <leader>t :TestFile<CR>
 autocmd FileType ruby map <silent> <leader>l :TestLast<CR>
