@@ -184,7 +184,7 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
 
-let g:gitgutter_updatetime = 250
+let g:gitgutter_updatetime = 100
 
 map y <Plug>(highlightedyank)
 
