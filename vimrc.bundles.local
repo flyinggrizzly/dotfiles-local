@@ -1,7 +1,9 @@
 " Plugins
 
 Plug 'davidoc/taskpaper.vim'
-Plug 'gabrielelana/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'elzr/vim-json'
+Plug 'plasticboy/vim-markdown'
 
 " File navigation and git
 Plug 'scrooloose/nerdtree'
