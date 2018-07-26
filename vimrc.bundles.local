@@ -51,7 +51,7 @@ Plug 'junegunn/vim-easy-align'
 " To get the 'yo' alias, which enables paste mode for one insert only
 Plug 'tpope/vim-unimpaired'
 
-Plug 'flyinggrizzly/vim-molokai'
+Plug 'styrmis/molokai'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
