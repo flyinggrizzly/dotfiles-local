@@ -1,5 +1,7 @@
 " Plugins
 
+Plug 'ngmy/vim-rubocop'
+
 Plug 'davidoc/taskpaper.vim'
 Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
