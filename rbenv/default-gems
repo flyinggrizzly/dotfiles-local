@@ -4,6 +4,7 @@
 # Tools
 tmuxinator
 httparty
+neovim
 
 # Ruby/Rails development
 rubocop
