@@ -49,6 +49,8 @@ endtry
 " Markdown tables
 au Filetype markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
+let g:vim_markdown_folding_disabled = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerdtree config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
