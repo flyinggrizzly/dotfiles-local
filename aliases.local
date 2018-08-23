@@ -31,6 +31,8 @@ alias ggone="git branch -vv | grep ': gone' | cut -c 3- | awk '{ print \$1 }'"
 
 alias grc="git rebase --continue"
 
+alias grim="git rebase -i master"
+
 # Bundler
 alias b="bundle"
 alias be="bundle exec"
