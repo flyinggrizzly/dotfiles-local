@@ -23,6 +23,8 @@ alias gbd="git branch -d"
 alias gd="git diff"
 alias gco="git checkout"
 
+alias gcp="git cherry-pick"
+
 alias gfp="git fetch -p"
 alias gp="git pull"
 alias gfpp="git fetch -p && git pull"
