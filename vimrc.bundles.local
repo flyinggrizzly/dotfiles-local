@@ -10,6 +10,7 @@ Plug 'plasticboy/vim-markdown'
 " Javascript, React and JSX
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
 
 " File navigation and git
 Plug 'scrooloose/nerdtree'
