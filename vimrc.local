@@ -91,9 +91,10 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=56
 " => Linting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Use Rubocop
+" Use Rubocop, ESLint
 let g:ale_linters = {
 \   'ruby': ['rubocop'],
+\   'javascript': ['eslint']
 \ }
 
 
@@ -101,9 +102,13 @@ let g:ale_linters = {
 " => Language specifics
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" React and JSX
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
 " Ruby indentation style
 let ruby_indent_block_style = 'do'
 
+" Automated testing
 autocmd FileType ruby map <silent> <leader>s :TestNearest<CR>
 autocmd FileType ruby map <silent> <leader>t :TestFile<CR>
 autocmd FileType ruby map <silent> <leader>l :TestLast<CR>
