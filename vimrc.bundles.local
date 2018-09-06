@@ -15,6 +15,7 @@ Plug 'mattn/emmet-vim'
 " File navigation and git
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'dhruvasagar/vim-zoom'
 
 " Indent guides
 Plug 'nathanaelkane/vim-indent-guides'

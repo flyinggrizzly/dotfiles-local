@@ -51,6 +51,11 @@ au Filetype markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 let g:vim_markdown_folding_disabled = 1
 
+" Vim-Zoom
+if !hasmapto('<Plug>(zoom-toggle)')
+  nmap <Leader>m <Plug>(zoom-toggle)
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerdtree config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
