@@ -204,9 +204,6 @@ let g:gitgutter_updatetime = 100
 
 map y <Plug>(highlightedyank)
 
-" taskwiki configuration
-let g:taskwiki_sort_orders={"D": "description+"}
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PROMOTE VARIABLE TO RSPEC LET
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L202
