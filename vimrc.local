@@ -5,6 +5,9 @@
 " Leader
 let mapleader = ' '
 
+set spelllang=en
+set spellfile=$HOME/dotfiles-local/vim-spell/en.utf-8.add
+
 set incsearch nohlsearch " do incremental searching without residual highlighting
 set smartcase     " Case insensitive searches, until an uppercase letter is type
 
