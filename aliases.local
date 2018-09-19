@@ -28,6 +28,7 @@ alias gcp="git cherry-pick"
 alias gfp="git fetch -p"
 alias gp="git pull"
 alias gfpp="git fetch -p && git pull"
+alias gpf="git push --force-with-lease"
 
 alias ggone="git branch -vv | grep ': gone' | cut -c 3- | awk '{ print \$1 }'"
 
