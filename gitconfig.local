@@ -3,7 +3,7 @@
   email = sean@flyinggrizzly.io
 
 [core]
-  editor = /usr/local/bin/nvim
+  editor = $(which nvim)
 
 [commit]
   verbose = true
