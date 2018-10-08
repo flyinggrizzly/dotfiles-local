@@ -25,6 +25,7 @@
   cp = cherry-pick
   po = "!git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
   ctags = !.git/hooks/ctags
+  cane = commit --amend --no-edit
 
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset

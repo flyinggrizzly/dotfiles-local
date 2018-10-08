@@ -22,6 +22,8 @@ alias gb="git branch -vv --sort=committerdate"
 alias gbd="git branch -d"
 alias gd="git diff"
 alias gco="git checkout"
+alias grm="git rebase master"
+alias grim="git rebase -i master"
 
 alias gcp="git cherry-pick"
 
