@@ -51,14 +51,8 @@ endtry
 
 " Python package paths for NeoVim
 if has('nvim')
-  let s:uname = system('uname')
-  if s:uname == 'Darwin'
-    let g:python_host_prog  = '/usr/local/bin/python2'
-    let g:python3_host_prog = '/usr/local/bin/python3'
-  else
-    let g:python_host_prog  = '/usr/bin/python2'
-    let g:python3_host_prog = '/usr/bin/python3'
-  end
+  let g:python_host_prog  = system('$(which python2)')
+  let g:python3_host_prog = system('$(which python3)')
 endif
 
 " Markdown tables
