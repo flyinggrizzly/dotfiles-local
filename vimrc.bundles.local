@@ -8,7 +8,6 @@ Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 
 " Javascript, React and JSX
-Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 
@@ -40,8 +39,6 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-haml'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
-
-Plug 'mattn/emmet-vim'
 
 Plug 'tpope/vim-dispatch'
 
