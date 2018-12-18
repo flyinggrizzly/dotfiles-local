@@ -65,6 +65,16 @@ if !hasmapto('<Plug>(zoom-toggle)')
   nmap <Leader>m <Plug>(zoom-toggle)
 endif
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vimwiki config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:vimwiki_list = [{ 'path' : '~/Dropbox/vimwiki/',
+                      \ 'syntax' : 'markdown',
+                      \ 'auto_export' : 1 }]
+let g:vimwiki_autowriteall = 1 " 1 == on
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerdtree config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
