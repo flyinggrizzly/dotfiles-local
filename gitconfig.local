@@ -1,6 +1,6 @@
 [user]
   name = Sean DMR
-  email = sean@flyinggrizzly.io
+  email = sean@flyinggrizzly.net
 
 [core]
   editor = $(which nvim)
