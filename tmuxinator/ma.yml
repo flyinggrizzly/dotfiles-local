@@ -61,8 +61,14 @@ windows:
   - zsh:
       root: ~/
   - dotfiles:
-      layout: mail-vertical
+      layout: main-vertical
       root: ~/dotfiles-local/
+      panes:
+        - nvim
+        - zsh
+  - notes:
+      layout: main-vertical
+      root: ~/Dropbox/Apps/Editorial/
       panes:
         - nvim
         - zsh
