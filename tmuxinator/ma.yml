@@ -60,3 +60,9 @@ windows:
   - logs: tail -f log/development.log
   - zsh:
       root: ~/
+  - dotfiles:
+      layout: mail-vertical
+      root: ~/dotfiles-local/
+      panes:
+        - nvim
+        - zsh
