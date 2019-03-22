@@ -2,6 +2,7 @@
 
 name: ma
 root: ~/ma/mystery-applicant
+pre: bundle && yarn && bin/rails db:migrate
 
 # Optional tmux socket
 # socket_name: foo
@@ -57,6 +58,7 @@ windows:
         - bin/start-solr
         - bin/webpack -w
         - bin/rails s
+        - bin/rails c
   - logs: tail -f log/development.log
   - zsh:
       root: ~/
