@@ -2,7 +2,6 @@
 
 name: ma
 root: ~/ma/mystery-applicant
-pre: bundle && yarn && bin/rails db:migrate
 
 # Optional tmux socket
 # socket_name: foo
@@ -12,7 +11,7 @@ pre: bundle && yarn && bin/rails db:migrate
 
 # Project hooks
 # Runs on project start, always
-# on_project_start: command
+on_project_start: bundle && yarn && bin/rails db:migrate
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
