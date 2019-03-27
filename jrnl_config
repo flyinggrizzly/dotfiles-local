@@ -1,0 +1,17 @@
+{
+  "editor": "vim",
+  "journals": {
+    "default": "~/Dropbox/journals/main.txt",
+    "msbp": "~/Dropbox/journals/msbplays.txt",
+    "titans": "~/Dropbox/journals/titans.txt",
+    "gdev": "~/Dropbox/journals/game_dev.txt",
+    "code": "~/Dropbox/journals/code.txt"
+  },
+  "linewrap": "80",
+  "highlight": true,
+  "default_minute": 0,
+  "encrypt": false,
+  "tagsymbols": "@",
+  "default_hour": 9,
+  "timeformat": "%Y-%m-%d %H:%M"
+}
