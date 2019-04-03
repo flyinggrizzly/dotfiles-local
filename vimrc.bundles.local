@@ -22,6 +22,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 " File formatting
 Plug 'davidoc/taskpaper.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-sleuth'
 
 " Following taken from styrmis/dotfiles {
 Plug 'jgdavey/tslime.vim'
