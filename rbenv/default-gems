@@ -9,3 +9,5 @@ neovim
 # Ruby/Rails development
 rubocop
 rails
+bundler
+bundler 1.17.3
