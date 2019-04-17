@@ -73,3 +73,15 @@ windows:
       panes:
         - nvim
         - zsh
+  - fgnet:
+      root: ~/flying-grizzly
+      layout: main-vertical
+      panes:
+        - nvim
+        - zsh
+  - medialog:
+      root: ~/projects/book-log
+      layout: main-vertical
+      panes:
+        - nvim
+        - zsh
