@@ -11,7 +11,7 @@ root: ~/ma/mystery-applicant
 
 # Project hooks
 # Runs on project start, always
-on_project_start: bundle && yarn && bin/rails db:migrate
+on_project_first_start: cd ~/ma/mystery-applicant && gco master && bundle && yarn && bin/rails db:migrate
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
