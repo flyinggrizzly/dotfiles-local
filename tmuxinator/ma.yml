@@ -11,7 +11,7 @@ root: ~/
 
 # Project hooks
 # Runs on project start, always
-on_project_first_start: cd ~/ma/mystery-applicant && gco master && bundle && yarn && bin/rails db:migrate
+on_project_first_start: cd ~/ma/mystery-applicant && git checkout master && bundle && yarn && bin/rails db:migrate
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
@@ -44,6 +44,7 @@ on_project_first_start: cd ~/ma/mystery-applicant && gco master && bundle && yar
 
 windows:
   - ma:
+      root: ~/ma/mystery-applicant
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
@@ -52,6 +53,7 @@ windows:
         - nvim
         - zsh
   - ma-runners:
+      root: ~/ma/mystery-applicant
       layout: tiled
       panes:
         - bin/start-solr
@@ -60,7 +62,6 @@ windows:
         - bin/rails c
   - logs: tail -f log/development.log
   - zsh:
-      root: ~/
   - dotfiles:
       layout: main-vertical
       root: ~/dotfiles-local/
