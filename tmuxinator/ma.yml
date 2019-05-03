@@ -1,7 +1,7 @@
 # /Users/seandmr/.config/tmuxinator/ma.yml
 
 name: ma
-root: ~/ma/mystery-applicant
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -85,3 +85,10 @@ windows:
       panes:
         - nvim
         - zsh
+  - fgnet-gatsby:
+      root: ~/projects/fgnet-bootstrap
+      layout: main-vertical
+      panes:
+        - nvim
+        - zsh
+        - gatsby develop
