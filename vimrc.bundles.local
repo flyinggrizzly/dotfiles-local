@@ -9,6 +9,7 @@ Plug 'plasticboy/vim-markdown'
 
 " Javascript, React and JSX
 Plug 'mxw/vim-jsx'
+Plug 'jxnblk/vim-mdx-js'
 Plug 'mattn/emmet-vim'
 
 " File navigation and git
