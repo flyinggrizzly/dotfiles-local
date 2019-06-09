@@ -70,9 +70,18 @@ endif
 " => Vimwiki config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:vimwiki_list = [{ 'path' : '~/Dropbox/vimwiki/',
-                      \ 'syntax' : 'markdown',
-                      \ 'auto_export' : 1 }]
+let g:vimwiki_list = [
+  \{
+    \ 'path' : '~/Dropbox/Apps/Editorial/wikis/personal',
+    \ 'syntax' : 'markdown',
+    \ 'auto_export' : 1
+  \},
+  \{
+    \ 'path' : '~/Dropbox/Apps/Editorial/wikis/uncharted_worlds',
+    \ 'syntax' : 'markdown',
+    \ 'auto_export' : 1
+  \}
+\]
 let g:vimwiki_autowriteall = 1 " 1 == on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
