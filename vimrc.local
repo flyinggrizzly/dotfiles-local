@@ -74,11 +74,13 @@ let g:vimwiki_list = [
   \{
     \ 'path' : '~/Dropbox/Apps/Editorial/wikis/personal',
     \ 'syntax' : 'markdown',
+    \ 'ext' : '.md',
     \ 'auto_export' : 1
   \},
   \{
     \ 'path' : '~/Dropbox/Apps/Editorial/wikis/uncharted_worlds',
     \ 'syntax' : 'markdown',
+    \ 'ext' : '.md',
     \ 'auto_export' : 1
   \}
 \]
