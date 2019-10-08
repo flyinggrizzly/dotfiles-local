@@ -52,12 +52,13 @@ windows:
       panes:
         - nvim
         - zsh
+        - bin/webpack -w
   - ma-runners:
       root: ~/ma/mystery-applicant
       layout: tiled
       panes:
         - bin/start-solr
-        - bin/webpack -w
+        - zsh
         - bin/rails s
         - bin/rails c
   - logs: tail -f log/development.log
