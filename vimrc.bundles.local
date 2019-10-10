@@ -44,8 +44,6 @@ Plug 'cespare/vim-toml'
 
 Plug 'tpope/vim-dispatch'
 
-Plug 'wellle/tmux-complete'
-
 Plug 'ecomba/vim-ruby-refactoring'
 
 Plug 'jiangmiao/auto-pairs' " Auto-complete closing brackets
