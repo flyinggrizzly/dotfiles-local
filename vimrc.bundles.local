@@ -1,4 +1,7 @@
 " Plugins
+UnPlug 'junegunn/fzf'
+UnPlug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'ngmy/vim-rubocop'
 
