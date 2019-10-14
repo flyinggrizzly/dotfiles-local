@@ -22,3 +22,6 @@ export NVM_DIR="$HOME/.nvm"
 # export PATH="/usr/local/opt/mysql@5.5/bin:$PATH"
 # ImageMagick 6 path
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+# SQLite
+export PATH="$(which sqlite3):$PATH"
