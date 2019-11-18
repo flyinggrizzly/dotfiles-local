@@ -28,3 +28,6 @@ export PATH="$(which sqlite3):$PATH"
 
 # Steam scaling fix
 alias gosteam='GDK_SCALE=2 nohup steam &>/dev/null &'
+
+alias gospotify='spotify &>/dev/null &'
+alias gozoom='zoom &>/dev/null &'
