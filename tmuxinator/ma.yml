@@ -11,7 +11,6 @@ root: ~/
 
 # Project hooks
 # Runs on project start, always
-on_project_first_start: cd ~/ma/mystery-applicant && git checkout master && bundle && yarn && bin/rails db:migrate
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
@@ -52,7 +51,7 @@ windows:
       panes:
         - nvim
         - 
-        - bin/webpack -w
+        - bin/webpack-dev-server
   - ma-runners:
       root: ~/ma/mystery-applicant
       layout: tiled
