@@ -96,3 +96,8 @@ set -g message-style fg=colour232,bg=colour166,bold
 # }
 
 ## }
+
+# Copy to clipboard
+if-shell "uname grep | -q Linux" set-option -g mouse on
+if-shell "uname grep | -q Linux" set-option -s set-clipboard off
+if-shell "uname grep | -q Linux" bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -se c -i"
