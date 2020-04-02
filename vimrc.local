@@ -254,3 +254,11 @@ endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr><Paste>"
 
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+\ ]
+
+
+augroup ale
+  autocmd!
+augroup END

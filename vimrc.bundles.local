@@ -1,5 +1,7 @@
 " Plugins
+UnPlug 'ale'
 Plug 'ngmy/vim-rubocop'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'davidoc/taskpaper.vim'
 Plug 'godlygeek/tabular'
