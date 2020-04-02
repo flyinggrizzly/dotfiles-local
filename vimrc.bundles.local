@@ -7,9 +7,11 @@ Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 
 " Javascript, React and JSX
-Plug 'amadeus/vim-jsx'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'mattn/emmet-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 
 " File navigation and git
 Plug 'scrooloose/nerdtree'
@@ -20,7 +22,6 @@ Plug 'dhruvasagar/vim-zoom'
 Plug 'nathanaelkane/vim-indent-guides'
 
 " File formatting
-Plug 'davidoc/taskpaper.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sleuth'
 
@@ -62,13 +63,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'haya14busa/incsearch.vim'
-Plug 'vim-scripts/greplace.vim'
+Plug 'styrmis/greplace', { 'branch':'allow-blank-filename-list' }
 
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'mileszs/ack.vim'
-
-Plug 'elixir-lang/vim-elixir'
 
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
