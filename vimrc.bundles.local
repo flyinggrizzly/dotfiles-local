@@ -57,7 +57,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'styrmis/molokai'
 
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
+"Plug 'benmills/vimux'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
