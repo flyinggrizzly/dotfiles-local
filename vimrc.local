@@ -173,7 +173,7 @@ let g:tslime_always_current_window=1
 let g:tmux_panenumber=2
 
 nmap <Leader>u :Tmux bundle exec undercover<CR>
-nmap <Leader>um :Tmux bundle exec undercover -c master<CR>
+nmap <Leader>um :Tmux bundle exec undercover -c main<CR>
 
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
