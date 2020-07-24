@@ -59,8 +59,11 @@ windows:
         - bin/start-solr
         - zsh
         - bin/rails s
-        - bin/rails c
-  - logs: tail -f log/development.log
+        - puma-dev -sysbind
+  - logs:
+      root: ~/ma/mystery-applicant
+      panes:
+      - tail -f log/development.log
   - zsh:
   - dotfiles:
       layout: main-vertical
