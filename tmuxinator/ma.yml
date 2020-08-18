@@ -59,7 +59,7 @@ windows:
         - bin/start-solr
         - zsh
         - bin/rails s
-        - puma-dev -sysbind
+        - 
   - logs:
       root: ~/ma/mystery-applicant
       panes:
