@@ -98,7 +98,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " Git symbols
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
