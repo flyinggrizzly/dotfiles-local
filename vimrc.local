@@ -262,3 +262,21 @@ let g:coc_global_extensions = [
 augroup ale
   autocmd!
 augroup END
+
+function! g:NeuronGenerateID(title)
+  if empty(a:title)
+    return system("od -An -N 4 -t 'x4' /dev/random")
+  else
+    let l:lower = tolower(a:title)
+
+    let l:text = substitute(l:lower, '\W', ' ', 'g')
+
+    let l:text_elements = split(l:text)
+
+    let l:kebabed_title = join(l:text_elements, '-')
+
+    let l:random_suffix = substitute(system("od -An -N 4 -t 'x4' /dev/random"), '\W', '', 'g')
+
+    return join([l:kebabed_title, l:random_suffix], '--')
+  endif
+endfunction
