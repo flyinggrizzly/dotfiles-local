@@ -1,6 +1,6 @@
 # /Users/seandmr/.config/tmuxinator/ma.yml
 
-name: ma
+name: s
 root: ~/
 
 # Optional tmux socket
@@ -42,29 +42,6 @@ root: ~/
 # post: tmux -CC attach -t ma
 
 windows:
-  - ma:
-      root: ~/ma/mystery-applicant
-      layout: 16c4,159x35,0,0[159x27,0,0,0,159x7,0,28{119x7,0,28,20,39x7,120,28,21}]
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      panes:
-        - nvim
-        - 
-        - bin/webpack-dev-server
-  - ma-runners:
-      root: ~/ma/mystery-applicant
-      layout: tiled
-      panes:
-        - bin/start-solr
-        - zsh
-        - bin/rails s
-        - 
-  - logs:
-      root: ~/ma/mystery-applicant
-      panes:
-      - tail -f log/development.log
-  - zsh:
   - neuron:
       root: ~/projects/neuron
       layout: dfd1,382x80,0,0{231x80,0,0,3,150x80,232,0[150x52,232,0,20,150x27,232,53{79x27,232,53,21,36x27,312,53,22,33x27,349,53,23}]}
@@ -74,6 +51,27 @@ windows:
         - 
         - bin/neuron-sync
         - neuron rib
+  - blog:
+      root: ~/flying-grizzly
+      layout: 16c4,159x35,0,0[159x27,0,0,0,159x7,0,28{119x7,0,28,20,39x7,120,28,21}]
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - nvim
+        - 
+        - 
+  - blog-next:
+      root: ~/projects/next.flyinggrizzly.net
+      layout: 16c4,159x35,0,0[159x27,0,0,0,159x7,0,28{119x7,0,28,20,39x7,120,28,21}]
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - nvim
+        - 
+        - 
+  - zsh:
   - dotfiles:
       layout: main-vertical
       root: ~/dotfiles-local/
@@ -86,22 +84,9 @@ windows:
       panes:
         - nvim
         - zsh
-  - fgnet:
-      root: ~/flying-grizzly
-      layout: main-vertical
-      panes:
-        - nvim
-        - zsh
   - medialog:
       root: ~/projects/book-log
       layout: main-vertical
       panes:
         - nvim
         - zsh
-  - fgnet-gatsby:
-      root: ~/projects/fgnet-bootstrap
-      layout: main-vertical
-      panes:
-        - nvim
-        - zsh
-        - gatsby develop
