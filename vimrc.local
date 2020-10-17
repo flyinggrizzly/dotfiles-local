@@ -281,17 +281,20 @@ function! g:CustomNeuronIDGenerator(title)
   endif
 endfunction
 
-function! g:NewZettel(title)
-  let l:id = join([ CustomNeuronIDGenerator(a:title), '.md' ], '')
+function! g:NewZettel(id)
+  let l:zettel_id = CustomNeuronIDGenerator(a:id)
 
-  execute(join([ "edit", l:id ], ' '))
+  let l:filename = join([ l:zettel_id, '.md' ])
+  let l:title = substitute(a:id, '-', ' ', 'g')
+
+  execute(join([ "edit", l:filename ], ' '))
 
   let l:body = [
 	  \ '---',
 	  \ 'date: '.strftime("%Y-%m-%dT%H:%M"),
 	  \ '---',
 	  \ '',
-	  \ '# '.a:title
+	  \ '# '.l:title
 	\ ]
 
 	call append(0, l:body)
