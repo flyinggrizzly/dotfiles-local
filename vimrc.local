@@ -263,7 +263,7 @@ augroup ale
   autocmd!
 augroup END
 
-function! g:NeuronGenerateID(title)
+function! g:CustomNeuronIDGenerator(title)
   if empty(a:title)
     return system("od -An -N 4 -t 'x4' /dev/random")
   else
@@ -280,3 +280,10 @@ function! g:NeuronGenerateID(title)
     return join([l:kebabed_title, l:random_suffix], '--')
   endif
 endfunction
+
+function! g:NewZettel(title)
+  let l:id = join([ CustomNeuronIDGenerator(a:title), '.md' ], '')
+
+  execute(join([ "edit", l:id ], ' '))
+endfunction
+:command! -nargs=1 Z call NewZettel(<f-args>)
