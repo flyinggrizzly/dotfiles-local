@@ -284,7 +284,7 @@ endfunction
 function! g:NewZettel(id)
   let l:zettel_id = CustomNeuronIDGenerator(a:id)
 
-  let l:filename = join([ l:zettel_id, '.md' ])
+  let l:filename = join([ l:zettel_id, '.md' ], '')
   let l:title = substitute(a:id, '-', ' ', 'g')
 
   execute(join([ "edit", l:filename ], ' '))
