@@ -69,11 +69,11 @@ windows:
       root: ~/projects/neuron
       layout: dfd1,382x80,0,0{231x80,0,0,3,150x80,232,0[150x52,232,0,20,150x27,232,53{79x27,232,53,21,36x27,312,53,22,33x27,349,53,23}]}
       panes:
-        - nvim index.md
+        - nvim
         - 
         - 
         - bin/neuron-sync
-        - neuron rib
+        - neuron rib -wS
   - dotfiles:
       layout: main-vertical
       root: ~/dotfiles-local/
