@@ -305,6 +305,35 @@ function! g:FileNameAndPath(file_name_and_path)
   endif
 endfunction
 
+" Shamelessly stolen from christoomey/vim-titlecase
+function! g:SmartCapitalize(string)
+  " Don't change intentional all caps
+  if(toupper(a:string) ==# a:string)
+    return a:string
+  endif
+
+  let s = tolower(a:string)
+
+  let exclusions = '^\(a\|an\|and\|as\|at\|but\|by\|en\|for\|if\|in\|nor\|of\|on\|or\|per\|the\|to\|v.?\|vs.?\|via\)$'
+  " Return the lowered string if it matches either the built-in or user exclusion list
+  if (match(s, exclusions) >= 0)
+    return s
+  endif
+
+  return toupper(s[0]) . s[1:]
+endfunction
+
+function! g:TitleCase(string)
+  let l:parts = split(a:string, ' ')
+  let l:capitalized_parts = []
+
+  for part in l:parts
+    call add(l:capitalized_parts, SmartCapitalize(part))
+  endfor
+
+  return join(l:capitalized_parts, ' ')
+endfunction
+
 function! g:NewZettel(id)
   let l:name_and_path = FileNameAndPath(a:id)
   let l:id = l:name_and_path['id']
@@ -322,7 +351,7 @@ function! g:NewZettel(id)
 	  \ 'date: '.strftime("%Y-%m-%dT%H:%M"),
 	  \ '---',
 	  \ '',
-	  \ '# '.l:title
+	  \ '# '. TitleCase(l:title)
 	\ ]
 
 	call append(0, l:body)
