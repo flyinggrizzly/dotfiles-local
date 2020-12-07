@@ -282,11 +282,38 @@ function! g:CustomNeuronIDGenerator(title)
   endif
 endfunction
 
-function! g:NewZettel(id)
-  let l:zettel_id = CustomNeuronIDGenerator(a:id)
+function! g:FileNameAndPath(file_name_and_path)
+  if empty(a:file_name_and_path)
+    return { 'id': '', path_elements: [] }
+  else
+    let l:string = tolower(a:file_name_and_path)
+    let l:elements = split(l:string, '/')
 
-  let l:filename = join([ l:zettel_id, '.md' ], '')
-  let l:title = substitute(a:id, '-', ' ', 'g')
+    let l:id = l:elements[-1]
+    let l:path_elements = []
+
+    if (len(l:elements) > 0)
+      for el in l:elements[0 : -2]
+	call add(l:path_elements, el)
+	call add(l:path_elements, '/')
+      endfor
+    endif
+
+    let l:path = join(l:path_elements, '')
+
+    return { 'id': l:id, 'path': l:path }
+  endif
+endfunction
+
+function! g:NewZettel(id)
+  let l:name_and_path = FileNameAndPath(a:id)
+  let l:id = l:name_and_path['id']
+
+  let l:zettel_id = CustomNeuronIDGenerator(l:id)
+  let l:path = l:name_and_path['path']
+
+  let l:filename = join([ l:path, l:zettel_id, '.md' ], '')
+  let l:title = substitute(l:id, '-', ' ', 'g')
 
   execute(join([ "edit", l:filename ], ' '))
 
