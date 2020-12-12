@@ -381,7 +381,7 @@ function! g:NewZettel(id, ...)
 	call append(0, l:front_matter)
 	call append(len(l:front_matter), l:body)
 endfunction
-:command! -complete=dir -nargs=+ Z call NewZettel(<f-args>)
+:command! -complete=file -nargs=+ Z call NewZettel(<f-args>)
 
 nmap <Leader>ttf :TableFormat<CR>
 
