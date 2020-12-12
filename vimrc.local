@@ -334,8 +334,32 @@ function! g:TitleCase(string)
   return join(l:capitalized_parts, ' ')
 endfunction
 
-function! g:NewZettel(id)
+function! g:BuildFrontmatter(tags)
+  let l:tags = a:tags
+
+  let l:front_matter = [
+    \ '---',
+    \ 'date: '.strftime("%Y-%m-%dT%H:%M")
+  \]
+
+  if (len(l:tags) > 0)
+    call add(l:front_matter, 'tags:')
+
+    for tag in l:tags
+      let l:tag_line = '    - ' . tag
+
+      call add(l:front_matter, l:tag_line)
+    endfor
+  endif
+
+  call add(l:front_matter, '---')
+
+  return l:front_matter
+endfunction
+
+function! g:NewZettel(id, ...)
   let l:name_and_path = FileNameAndPath(a:id)
+  let l:tags = a:000
   let l:id = l:name_and_path['id']
 
   let l:zettel_id = CustomNeuronIDGenerator(l:id)
@@ -346,16 +370,18 @@ function! g:NewZettel(id)
 
   execute(join([ "edit", l:filename ], ' '))
 
+
+  let l:front_matter = BuildFrontmatter(l:tags)
+
   let l:body = [
-	  \ '---',
-	  \ 'date: '.strftime("%Y-%m-%dT%H:%M"),
-	  \ '---',
 	  \ '',
 	  \ '# '. TitleCase(l:title)
 	\ ]
 
-	call append(0, l:body)
+	call append(0, l:front_matter)
+	call append(len(l:front_matter), l:body)
 endfunction
-:command! -complete=dir -nargs=1 Z call NewZettel(<f-args>)
+:command! -complete=dir -nargs=+ Z call NewZettel(<f-args>)
 
 nmap <Leader>ttf :TableFormat<CR>
+
