@@ -276,9 +276,11 @@ function! g:CustomNeuronIDGenerator(title)
 
     let l:kebabed_title = join(l:text_elements, '-')
 
-    let l:random_suffix = substitute(system("od -An -N 4 -t 'x4' /dev/random"), '\W', '', 'g')
+    "let l:random_suffix = substitute(system("od -An -N 4 -t 'x4' /dev/random"), '\W', '', 'g')
 
-    return join([l:kebabed_title, l:random_suffix], '--')
+    "return join([l:kebabed_title, l:random_suffix], '--')
+
+    return l:kebabed_title
   endif
 endfunction
 
