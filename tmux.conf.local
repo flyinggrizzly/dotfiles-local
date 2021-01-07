@@ -97,3 +97,5 @@ set -g message-style fg=colour232,bg=colour166,bold
 # }
 
 ## }
+
+set-option -g default-shell $SHELL
