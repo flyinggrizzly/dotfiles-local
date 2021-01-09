@@ -359,9 +359,10 @@ function! g:BuildFrontmatter(tags)
   return l:front_matter
 endfunction
 
-function! g:NewZettel(id, ...)
+function! g:NZ(id, command, tags)
   let l:name_and_path = FileNameAndPath(a:id)
-  let l:tags = a:000
+  let l:command = a:command
+  let l:tags = a:tags
   let l:id = l:name_and_path['id']
 
   let l:zettel_id = CustomNeuronIDGenerator(l:id)
@@ -370,20 +371,30 @@ function! g:NewZettel(id, ...)
   let l:filename = join([ l:path, l:zettel_id, '.md' ], '')
   let l:title = substitute(l:id, '-', ' ', 'g')
 
-  execute(join([ "edit", l:filename ], ' '))
+  execute(join([ l:command, l:filename ], ' '))
 
 
   let l:front_matter = BuildFrontmatter(l:tags)
 
   let l:body = [
-	  \ '',
-	  \ '# '. TitleCase(l:title)
-	\ ]
+  \ '',
+  \ '# '. TitleCase(l:title)
+  \]
 
-	call append(0, l:front_matter)
-	call append(len(l:front_matter), l:body)
+  call append(0, l:front_matter)
+  call append(len(l:front_matter), l:body)
 endfunction
+
+function! g:NewZettel(id, ...)
+  call NZ(a:id, "edit", a:000)
+endfunction
+
+function! g:NewZettelTab(id, ...)
+  call NZ(a:id, "tabedit", a:000)
+endfunction
+
 :command! -complete=file -nargs=+ Z call NewZettel(<f-args>)
+:command! -complete=file -nargs=+ Zt call NewZettelTab(<f-args>)
 
 nmap <Leader>ttf :TableFormat<CR>
 
