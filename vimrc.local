@@ -384,6 +384,52 @@ function! g:NZ(id, command, tags)
   call append(len(l:front_matter), l:body)
 endfunction
 
+function! g:FormatZettelEventDate(date_string)
+  let l:full_date_regexp = '\d\d\d\d-\d\d-\d\d'
+  let l:annual_date_regexp = 'yyyy-\d\d-\d\d'
+  let l:monthly_date_regexp = 'yyyy-mm-\d\d'
+  let l:daily_date_regexp = 'yyyy-mm-dd'
+
+  let l:date_components = split(a:date_string, '-')
+  let l:year = l:date_components[0]
+  let l:month = l:date_components[1]
+  let l:raw_date = l:date_components[2]
+  let l:date = substitute(l:raw_date, '^0', '', '')
+
+  if match(a:date_string, l:full_date_regexp) > -1
+    return a:date_string
+  elseif match(a:date_string, l:annual_date_regexp) > -1
+    let l:components = [
+    \ 'Annually on ',
+    \ l:month,
+    \ '/',
+    \ l:date,
+    \ ':'
+    \]
+    return join(l:components, '')
+  elseif match(a:date_string, l:monthly_date_regexp) > -1
+    let l:components = []
+
+    if l:date ==? '1'
+      call add(l:components, '1st')
+    elseif l:date ==? '2'
+      call add(l:components, '2nd')
+    elseif l:date ==? '3'
+      call add(l:components, '3rd')
+    else
+      call add(l:components, l:date.'th')
+    endif
+
+    call add(l:components, ' of every month:')
+
+    return join(l:components, '')
+  elseif match(a:date_string, l:daily_date_regexp)
+    return 'Every day'
+  else
+    return a:date_string
+  endif
+endfunction
+
 function! g:ZettelEvent(command, name, date, tags)
   let l:id_elements = [
   \ 'events/event',
@@ -396,7 +442,7 @@ function! g:ZettelEvent(command, name, date, tags)
   let l:tags = a:tags
 
   let l:filename = join([ l:id, '.md' ], '')
-  let l:title = substitute(a:name, '-', ' ', 'g')
+  let l:title = join([ FormatZettelEventDate(a:date), substitute(a:name, '-', ' ', 'g')], ' ')
 
   execute(join([ l:command, l:filename ], ' '))
 
