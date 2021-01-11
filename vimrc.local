@@ -373,7 +373,6 @@ function! g:NZ(id, command, tags)
 
   execute(join([ l:command, l:filename ], ' '))
 
-
   let l:front_matter = BuildFrontmatter(l:tags)
 
   let l:body = [
@@ -391,10 +390,25 @@ function! g:ZettelEvent(command, name, date, tags)
   \ a:date,
   \ a:name,
   \]
-
   let l:id = join(l:id_elements, '-')
 
-  call NZ(l:id, a:command, a:tags)
+  let l:command = a:command
+  let l:tags = a:tags
+
+  let l:filename = join([ l:id, '.md' ], '')
+  let l:title = substitute(a:name, '-', ' ', 'g')
+
+  execute(join([ l:command, l:filename ], ' '))
+
+  let l:front_matter = BuildFrontmatter(l:tags)
+
+  let l:body = [
+  \ '',
+  \ '# '. TitleCase(l:title)
+  \]
+
+  call append(0, l:front_matter)
+  call append(len(l:front_matter), l:body)
 endfunction
 
 function! g:NewZettel(id, ...)
