@@ -385,16 +385,36 @@ function! g:NZ(id, command, tags)
   call append(len(l:front_matter), l:body)
 endfunction
 
+function! g:ZettelEvent(command, name, date, tags)
+  let l:id_elements = [
+  \ 'events/event',
+  \ a:date,
+  \ a:name,
+  \]
+
+  let l:id = join(l:id_elements, '-')
+
+  call NZ(l:id, a:command, a:tags)
+endfunction
+
 function! g:NewZettel(id, ...)
   call NZ(a:id, "edit", a:000)
+endfunction
+function! g:NewZettelEvent(name, date, ...)
+  call ZettelEvent('edit', a:name, a:date, a:000)
 endfunction
 
 function! g:NewZettelTab(id, ...)
   call NZ(a:id, "tabedit", a:000)
 endfunction
+function! g:NewZettelEventTab(name, date, ...)
+  call ZettelEvent('tabedit', a:name, a:date, a:000)
+endfunction
 
 :command! -complete=file -nargs=+ Z call NewZettel(<f-args>)
+:command! -complete=file -nargs=+ ZE call NewZettelEvent(<f-args>)
 :command! -complete=file -nargs=+ Zt call NewZettelTab(<f-args>)
+:command! -complete=file -nargs=+ ZEt call NewZettelEventTab(<f-args>)
 
 nmap <Leader>ttf :TableFormat<CR>
 
