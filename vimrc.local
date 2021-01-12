@@ -387,50 +387,50 @@ function! g:NZ(id, command, tags)
   call append(len(l:front_matter), l:body)
 endfunction
 
-function! g:FormatZettelEventDate(date_string)
+function! g:FormatZettelEventDate(date_time)
   let l:full_date_regexp = '\d\d\d\d-\d\d-\d\d'
   let l:annual_date_regexp = 'yyyy-\d\d-\d\d'
   let l:monthly_date_regexp = 'yyyy-mm-\d\d'
   let l:daily_date_regexp = 'yyyy-mm-dd'
 
-  let l:date_components = split(a:date_string, '-')
+  let l:date_segments = split(a:date_time, 'T')
+  let l:has_time = len(l:date_segments) > 1
+  let l:date_segment = l:date_segments[0]
+  let l:time = l:date_segments[1]
+
+  let l:date_components = split(l:date_segment, '-')
   let l:year = l:date_components[0]
   let l:month = l:date_components[1]
   let l:raw_date = l:date_components[2]
   let l:date = substitute(l:raw_date, '^0', '', '')
 
-  if match(a:date_string, l:full_date_regexp) > -1
-    return a:date_string
-  elseif match(a:date_string, l:annual_date_regexp) > -1
-    let l:components = [
-    \ 'Annually on ',
-    \ l:month,
-    \ '/',
-    \ l:date,
-    \ ':'
-    \]
-    return join(l:components, '')
-  elseif match(a:date_string, l:monthly_date_regexp) > -1
-    let l:components = []
+  let l:components = []
 
+  if match(a:date_time, l:full_date_regexp) > -1
+    return a:date_time.':'
+  elseif match(a:date_time, l:annual_date_regexp) > -1
+    call add(l:components, 'Anually on '.l:month.'/'.l:date.' at '.l:time)
+  elseif match(a:date_time, l:monthly_date_regexp) > -1
     if l:date ==? '1'
-      call add(l:components, '1st')
+      call add(l:components, '1st of every month')
     elseif l:date ==? '2'
-      call add(l:components, '2nd')
+      call add(l:components, '2nd of every month')
     elseif l:date ==? '3'
-      call add(l:components, '3rd')
+      call add(l:components, '3rd of every month')
     else
-      call add(l:components, l:date.'th')
+      call add(l:components, l:date.'th of every month')
     endif
-
-    call add(l:components, ' of every month:')
-
-    return join(l:components, '')
-  elseif match(a:date_string, l:daily_date_regexp)
-    return 'Every day'
-  else
-    return a:date_string
+  elseif match(a:date_time, l:daily_date_regexp)
+    call add(l:components, 'Every day')
   endif
+
+  if l:has_time
+    call add(l:components, ' at '.l:time.':')
+  else
+    call add(l:components, ':')
+  endif
+
+  return join(l:components, ' ')
 endfunction
 
 function! g:ZettelEvent(command, name, date, tags)
