@@ -351,7 +351,7 @@ function! g:BuildFrontmatter(tags, include_date)
     call add(l:front_matter, 'tags:')
 
     for tag in l:tags
-      let l:tag_line = '    - ' . tag
+      let l:tag_line = '  - ' . tag
 
       call add(l:front_matter, l:tag_line)
     endfor
@@ -460,11 +460,37 @@ function! g:ZettelEvent(command, name, date, tags)
   call append(len(l:front_matter), l:body)
 endfunction
 
+function! g:ZettelJournal(command, name, tags)
+  let l:command = a:command
+  let l:date = strftime("%Y-%m-%d")
+  let l:name = a:name
+  let l:tags = a:000
+  let l:id = 'journal/journal-'.l:date.'-'.l:name
+
+  let l:filename = join([ l:id, '.md' ], '')
+  let l:title = 'Journal '.l:date.': '.l:name
+
+  execute(join([ l:command, l:filename ], ' '))
+
+  let l:front_matter = BuildFrontmatter(l:tags, 1)
+
+  let l:body = [
+  \ '',
+  \ '# '. TitleCase(l:title)
+  \]
+
+  call append(0, l:front_matter)
+  call append(len(l:front_matter), l:body)
+endfunction
+
 function! g:NewZettel(id, ...)
   call NZ(a:id, "edit", a:000)
 endfunction
 function! g:NewZettelEvent(name, date, ...)
   call ZettelEvent('edit', a:name, a:date, a:000)
+endfunction
+function! g:NewZettelJournal(name, ...)
+  call ZettelJournal('edit', a:name, a:000)
 endfunction
 
 function! g:NewZettelTab(id, ...)
@@ -473,11 +499,16 @@ endfunction
 function! g:NewZettelEventTab(name, date, ...)
   call ZettelEvent('tabedit', a:name, a:date, a:000)
 endfunction
+function! g:NewZettelJournalTab(name, ...)
+  call ZettelJournal('tabedit', a:name, a:000)
+endfunction
 
 :command! -complete=file -nargs=+ Z call NewZettel(<f-args>)
 :command! -complete=file -nargs=+ ZE call NewZettelEvent(<f-args>)
+:command! -complete=file -nargs=+ ZJ call NewZettelJournal(<f-args>)
 :command! -complete=file -nargs=+ Zt call NewZettelTab(<f-args>)
 :command! -complete=file -nargs=+ ZEt call NewZettelEventTab(<f-args>)
+:command! -complete=file -nargs=+ ZJt call NewZettelJournalTab(<f-args>)
 
 nmap <Leader>ttf :TableFormat<CR>
 
