@@ -396,7 +396,6 @@ function! g:FormatZettelEventDate(date_time)
   let l:date_segments = split(a:date_time, 'T')
   let l:has_time = len(l:date_segments) > 1
   let l:date_segment = l:date_segments[0]
-  let l:time = l:date_segments[1]
 
   let l:date_components = split(l:date_segment, '-')
   let l:year = l:date_components[0]
@@ -407,9 +406,9 @@ function! g:FormatZettelEventDate(date_time)
   let l:components = []
 
   if match(a:date_time, l:full_date_regexp) > -1
-    return a:date_time.':'
+    return a:date_time
   elseif match(a:date_time, l:annual_date_regexp) > -1
-    call add(l:components, 'Anually on '.l:month.'/'.l:date.' at '.l:time)
+    call add(l:components, 'Anually on '.l:month.'/'.l:date)
   elseif match(a:date_time, l:monthly_date_regexp) > -1
     if l:date ==? '1'
       call add(l:components, '1st of every month')
@@ -425,9 +424,7 @@ function! g:FormatZettelEventDate(date_time)
   endif
 
   if l:has_time
-    call add(l:components, ' at '.l:time.':')
-  else
-    call add(l:components, ':')
+    call add(l:components, ' at '.l:date_segments[1])
   endif
 
   return join(l:components, ' ')
