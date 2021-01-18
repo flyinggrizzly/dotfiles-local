@@ -1,4 +1,4 @@
-alias ls='ls -ltr'
+alias ls='ls -l'
 
 alias flushdns="sudo discoveryutil udnsflushcaches"
 
