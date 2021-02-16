@@ -43,7 +43,7 @@ root: ~/
 
 windows:
   - neuron:
-      root: ~/projects/neuron
+      root: ~/neuron
       layout: bf9f,204x51,0,0{142x51,0,0,0,61x51,143,0[61x37,143,0,7,61x13,143,38{27x13,143,38,9,33x13,171,38,10}]}
       panes:
         - nvim
