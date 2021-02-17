@@ -594,6 +594,20 @@ function! g:ZettelEvent(command, name, date, tags)
   call append(len(l:front_matter), l:body)
 endfunction
 
+function! g:RescheduleZettelEvent(new_date)
+  let l:any_date_regexp = '\v(yyyy|\d\d\d\d)-(mm|\d\d)-(dd|\d\d)'
+  let l:current_id = expand('%:t:r')
+  let l:old_date = l:current_id[6:15]
+
+  let l:current_title = FormatZettelEventDate(l:old_date)
+  let l:new_title = FormatZettelEventDate(a:new_date)
+
+  let l:new_filepath = substitute(l:current_id, l:any_date_regexp, a:new_date, 'g')
+
+  execute '%s/' . l:current_title . '/' . l:new_title . '/g'
+  execute 'Move ' . 'events/' . l:new_filepath . '.md'
+endfunction
+
 function! g:ZettelJournal(command, name, tags)
   let l:command = a:command
   let l:date = strftime("%Y-%m-%d")
@@ -643,6 +657,7 @@ endfunction
 :command! -complete=file -nargs=+ Zt call NewZettelTab(<f-args>)
 :command! -complete=file -nargs=+ ZEt call NewZettelEventTab(<f-args>)
 :command! -complete=file -nargs=+ ZJt call NewZettelJournalTab(<f-args>)
+:command! -nargs=+ Reschedule call RescheduleZettelEvent(<f-args>)
 
 nmap <Leader>ttf :TableFormat<CR>
 
