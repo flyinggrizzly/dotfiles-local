@@ -48,7 +48,7 @@ windows:
       panes:
         - nvim
         - 
-        - bin/neuron-sync
+        - 
         - neuron rib -wS
   - blog:
       root: ~/flying-grizzly

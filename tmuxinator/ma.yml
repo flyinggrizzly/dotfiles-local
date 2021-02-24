@@ -71,17 +71,11 @@ windows:
       panes:
         - nvim
         - 
-        - bin/neuron-sync
+        - 
         - neuron rib -wS
   - dotfiles:
       layout: main-vertical
       root: ~/dotfiles-local/
-      panes:
-        - nvim
-        - zsh
-  - notes:
-      layout: main-vertical
-      root: ~/Dropbox/Apps/Editorial/
       panes:
         - nvim
         - zsh
