@@ -401,9 +401,9 @@ function! g:AnnualDateFormat(date_time)
   if IncludesTime(a:date_time)
     let l:time = l:date_and_time[1]
 
-    return "Annually on ".l:month."/".l:date." at ".l:time
+    return "Annually on ".l:month."/".l:date." at ".l:time.":"
   else
-    return "Annually on ".l:month."/".l:date
+    return "Annually on ".l:month."/".l:date.":"
   endif
 endfunction
 
