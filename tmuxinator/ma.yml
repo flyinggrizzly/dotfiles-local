@@ -44,7 +44,7 @@ root: ~/
 windows:
   - ma:
       root: ~/ma/mystery-applicant
-      layout: main-vertial
+      layout: main-vertical
       #layout: 16c4,159x35,0,0[159x27,0,0,0,159x7,0,28{119x7,0,28,20,39x7,120,28,21}]
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
