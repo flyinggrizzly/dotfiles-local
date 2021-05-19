@@ -44,14 +44,14 @@ root: ~/
 windows:
   - ma:
       root: ~/ma/mystery-applicant
-      layout: 16c4,159x35,0,0[159x27,0,0,0,159x7,0,28{119x7,0,28,20,39x7,120,28,21}]
+      layout: main-vertial
+      #layout: 16c4,159x35,0,0[159x27,0,0,0,159x7,0,28{119x7,0,28,20,39x7,120,28,21}]
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
         - nvim
-        - 
-        - bin/webpack-dev-server
+        - zsh
   - ma-runners:
       root: ~/ma/mystery-applicant
       layout: tiled
@@ -59,7 +59,7 @@ windows:
         - bin/start-solr
         - zsh
         - bin/rails s
-        - 
+        - bin/webpack-dev-server
   - logs:
       root: ~/ma/mystery-applicant
       panes:
