@@ -22,3 +22,5 @@ if [ -e /home/seandmr/.nix-profile/etc/profile.d/nix.sh  ]; then . /home/seandmr
 
 export PATH="/home/seandmr/.ebcli-virtual-env/executables:$PATH"
 export PATH=/home/seandmr/.pyenv/versions/3.7.2/bin:$PATH
+
+export FZF_DEFAULT_COMMAND="ag --nocolor --ignore node_modules -g"
