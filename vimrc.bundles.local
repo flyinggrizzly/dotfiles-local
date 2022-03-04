@@ -17,8 +17,6 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'rking/ag.vim'
 Plug 'Chun-Yang/vim-action-ag'
 
-Plug 'fiatjaf/neuron.vim'
-
 " File navigation and git
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
