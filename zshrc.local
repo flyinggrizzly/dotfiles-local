@@ -1,3 +1,14 @@
+# In this file to ensure availability during setup
+function in-shopify() {
+  shopify_env_file=~/.shopify-env
+
+  if test -f $shopify_env_file; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 export EDITOR="$(which nvim)"
 export SHELL="$(which zsh)"
 
@@ -6,21 +17,14 @@ export PATH="/usr/sbin:$PATH"
 # Add personal scripts to path
 export PATH="$HOME/.scripts:$PATH"
 
-# Enable rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Tmuxinator shell completions
 source ~/.zsh/etc/tmuxinator.zsh
 
-# NVM config
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [[ in-shopify -ne 0 ]]; then
+  # NVM config
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if [ -e /home/seandmr/.nix-profile/etc/profile.d/nix.sh  ]; then . /home/seandmr/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-export PATH="/home/seandmr/.ebcli-virtual-env/executables:$PATH"
-export PATH=/home/seandmr/.pyenv/versions/3.7.2/bin:$PATH
-
-export FZF_DEFAULT_COMMAND="ag --nocolor --ignore node_modules -g"
+  export FZF_DEFAULT_COMMAND="ag --nocolor --ignore node_modules -g"
+fi
